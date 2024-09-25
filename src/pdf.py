@@ -24,7 +24,9 @@ import os
 
 
 # *** Created function to load multiple PDFs
-pdf_folder_path = r"D:\Computer Science\AI\LLM model\chat_bot\06afterclean"
+pdf_folder_path = "/chat_bot/06afterclean"
+
+# pdf_folder_path = r"D:\Computer Science\AI\LLM model\chat_bot\06afterclean"
 def load_multiple_pdfs(pdf_folder_path):  # ***
     docs = []  # *** Initialize empty list to store documents
     # *** Loop through all files in the specified folder
@@ -40,7 +42,8 @@ def load_multiple_pdfs(pdf_folder_path):  # ***
 
 openai_api_key = os.getenv("OPENAI_API_KEY")
 def create_vector():
-    pdf_folder_path=r"D:\Computer Science\AI\LLM model\chat_bot\06afterclean"
+    pdf_folder_path = "/chat_bot/06afterclean"
+    # pdf_folder_path=r"D:\Computer Science\AI\LLM model\chat_bot\06afterclean"
     docs = load_multiple_pdfs(pdf_folder_path)
 
     model = ChatOpenAI(
