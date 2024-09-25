@@ -66,11 +66,14 @@ def create_vector():
 
     # embed the chunks into vectorstore (FAISS)
     embeddings = OpenAIEmbeddings()
-    vectorstore = FAISS.from_documents(texts, embeddings)
+    if not embeddings:
+        print("Error: No embeddings generated. Check the input data.")
+    else:
+        vectorstore = FAISS.from_documents(texts, embeddings)
 
-    vectorstore.save_local("faiss_midjourney_docs")
+        vectorstore.save_local("faiss_midjourney_docs")
     # print("vectorstore created")
-    return vectorstore
+        return vectorstore
 
 
 # # *** Call the qa_agent function, passing in the API Key 我剛在網路認識一個人，他說他是醫生，但是有急用然後要向我借錢，我想知道這是詐騙嗎？and folder path for PDFs
