@@ -29,11 +29,41 @@
 *   `faiss_midjourney_docs/`: 本地儲存的 FAISS 向量索引。
 *   [requirements.txt](cci:7://file:///d:/chat_bot/requirements.txt:0:0-0:0): 專案依賴套件清單。
 
-## 🚀 快速上手
 
-### 1. 環境設定
+## 🛠️ 安裝與環境 
+
+本文件詳細說明如何建置 **LINE BOT 智慧防詐平台** 的執行環境。
+
+### 事前準備
+*   Python 3.10 
+*   Python 3.10 或以上版本
+*   [LINE Developers](https://developers.line.biz/) 帳號與 Messaging API Channel
+*   [OpenAI API Key](https://platform.openai.com/api-keys)
+
+
+### 1. 複製專案與進入目錄
+
+git clone <專案網址>
+cd chat_bot
+
+### 2. 建立虛擬環境 (建議)
+python -m venv venv
+
+Windows 啟動:
+venv\Scripts\activate
+
+
+### 3. 環境設定
 請在專案根目錄建立 `.env` 檔案，填入以下金鑰：
-```env
-LINE_ACCESS_TOKEN=你的_LINE_Channel_Access_Token
-LINE_SECRET=你的_LINE_Channel_Secret
-OPENAI_API_KEY=你的_OpenAI_API_Key
+
+- LINE_ACCESS_TOKEN=你的_LINE_Channel_Access_Token
+- LINE_SECRET=你的_LINE_Channel_Secret
+- OPENAI_API_KEY=你的_OpenAI_API_Key
+
+### 4.  安裝必要套件
+pip install -r requirements.txt
+
+## 🚀啟動與執行
+
+python app.py
+
